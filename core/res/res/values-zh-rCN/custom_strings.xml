@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="face_unlock_disabled_idle">面部解锁因不活跃被禁用</string>
+    <string name="pocket_lock_message_long_press">按住电源按钮解锁</string>
+    <string name="pocket_view_title">口袋模式已开启</string>
+    <string name="pocket_view_title_cancel">为了使用您的手机：</string>
+    <string name="pocket_view_top_tag_cancel">检查手机顶部区域是否无障碍物，并清除污垢或灰尘。</string>
+    <string name="pocket_view_top_tag_cancel2">长按电源键强制退出口袋模式。</string>
 </resources>
