@@ -9,4 +9,8 @@
     <string name="screen_pinning_description_no_navbar_fpsensor">这将会固定显示此屏幕，直到您取消固定为止。触摸并按住指纹传感器即可取消固定</string>
     <string name="screen_pinning_toast_no_navbar_fpsensor">要取消固定此屏幕，请触摸并按住指纹传感器。</string>
     <string name="face_unlock_recognizing">正在识别面部...</string>
+    <string name="screenrecord_stopdot_label">显示屏幕录制停止点</string>
+    <string name="screenrecord_stopdot_summary">长按移动它</string>
+    <string name="screenrecord_lowquality_label">较低屏幕录制质量</string>
+    <string name="screenrecord_lowquality_summary">较小的屏幕录制文件大小</string>
 </resources>
