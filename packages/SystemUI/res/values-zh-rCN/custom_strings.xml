@@ -13,4 +13,7 @@
     <string name="screenrecord_stopdot_summary">长按移动它</string>
     <string name="screenrecord_lowquality_label">较低屏幕录制质量</string>
     <string name="screenrecord_lowquality_summary">较小的屏幕录制文件大小</string>
+    <string name="screenrecord_longer_timeout_switch_label">大文件限制</string>
+    <string name="screenrecord_longer_timeout_switch_summary">限制录制文件大小为15GB</string>
+
 </resources>
