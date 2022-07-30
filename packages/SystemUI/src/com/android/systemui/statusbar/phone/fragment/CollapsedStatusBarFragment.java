@@ -396,17 +396,17 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 
     @Override
     public void onTuningChanged(String key, String newValue) {
-        boolean wasClockBlacklisted = mIsClockBlacklisted;
-        mIsClockBlacklisted = StatusBarIconController.getIconHideList(
-                mContext, newValue).contains("clock");
-        if (wasClockBlacklisted && !mIsClockBlacklisted) {
-            showClock(false);
-        }
-    }
-
-    @Override
-    public void onTuningChanged(String key, String newValue) {
-        if (key.equals(Settings.Secure.STATUS_BAR_SHOW_LYRIC)) {
+        if (key.equals(StatusBarIconController.ICON_HIDE_LIST)) {
+            boolean wasClockBlacklisted = mIsClockBlacklisted;
+            Context context = getContext();
+            if (context == null)
+                return;
+            mIsClockBlacklisted = StatusBarIconController.getIconHideList(
+                    context, newValue).contains("clock");
+            if (wasClockBlacklisted && !mIsClockBlacklisted) {
+                showClock(false);
+            }
+        } else if (key.equals(Settings.Secure.STATUS_BAR_SHOW_LYRIC)) {
             if (mLyricController != null) {
                 mLyricController.setEnabled(TunerService.parseIntegerSwitch(newValue, false));
             }
@@ -774,28 +774,24 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 
     private class LyricController extends LyricViewController {
         private View mLeftSide;
-        private View mCenteredArea;
 
         public LyricController(Context context, View statusBar) {
             super(context, statusBar);
-            mStartSide = statusBar.findViewById(R.id.status_bar_start_side_except_heads_up);
-            mCenteredArea = statusBar.findViewById(R.id.centered_area);
+            mLeftSide = statusBar.findViewById(R.id.status_bar_left_side);
         }
 
         public void showLyricView(boolean animate) {
             boolean disableNotifications = (mDisabled1 & DISABLE_NOTIFICATION_ICONS) != 0;
             boolean hasOngoingCall = (mDisabled1 & DISABLE_ONGOING_CALL_CHIP) == 0;
             if (!disableNotifications && !hasOngoingCall && isLyricStarted()) {
-                animateHide(mStartSide, animate);
-                animateHide(mCenteredArea, animate);
+                animateHide(mLeftSide, animate);
                 animateShow(getView(), animate);
             }
         }
 
         public void hideLyricView(boolean animate) {
             animateHide(getView(), animate);
-            animateShow(mStartSide, animate);
-            animateShow(mCenteredArea, animate);
+            animateShow(mLeftSide, animate);
         }
     }
     
