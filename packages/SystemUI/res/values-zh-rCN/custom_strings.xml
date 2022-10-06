@@ -17,5 +17,6 @@
     <string name="screenrecord_longer_timeout_switch_summary">限制录制文件大小为15GB</string>
     <string name="screenrecord_skip_time_label">跳过屏幕录制计时器</string>
     <string name="screenrecord_skip_time_summary">移除3秒等待</string>
+    <string name="screenrecord_hevc_switch_label">启用 HEVC</string>
 
 </resources>
