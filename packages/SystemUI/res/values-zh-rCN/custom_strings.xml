@@ -18,5 +18,6 @@
     <string name="screenrecord_skip_time_label">跳过屏幕录制计时器</string>
     <string name="screenrecord_skip_time_summary">移除3秒等待</string>
     <string name="screenrecord_hevc_switch_label">启用 HEVC</string>
-
+    <string name="bluetooth_is_off">蓝牙已关闭</string>
+    <string name="tap_a_device_to_connect">点击一个设备连接</string>
 </resources>
