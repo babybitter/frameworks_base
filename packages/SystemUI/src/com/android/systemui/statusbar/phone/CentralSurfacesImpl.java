@@ -792,8 +792,8 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces, Tune
             UserTracker userTracker,
             Provider<FingerprintManager> fingerprintManager,
             TunerService tunerService,
-            SysUiState sysUiState,
-            @Main Handler refreshNavbarHandler
+            @Main Handler refreshNavbarHandler,
+            SysUiState sysUiState
     ) {
         mContext = context;
         mNotificationsController = notificationsController;
